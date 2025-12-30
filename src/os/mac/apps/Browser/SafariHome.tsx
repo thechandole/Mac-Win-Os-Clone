@@ -20,12 +20,12 @@ const FAVOURITES = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://linkedin.com/in/akash-chandole-57830223b/",
     icon: linkedinIcon,
   },
   {
     name: "Naukri",
-    url: "https://naukri.com",
+    url: "https://www.naukri.com/mnjuser/profile?id=&altresid",
     icon: naukriIcon,
   },
 ];
