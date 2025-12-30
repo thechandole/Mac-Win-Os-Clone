@@ -1,4 +1,8 @@
 import { useRef, useState } from "react";
+import FinderIcon from '../../assets/dockIcon/Finder.png';
+import TerminalIcon from '../../assets/dockIcon/Terminal.png';
+import SafariIcon from '../../assets/dockIcon/safari.png';
+import ContactIcon from '../../assets/dockIcon/Contact.png';
 
 
 import type { ReactNode } from "react";
@@ -23,7 +27,7 @@ export const dockItems: DockItem[] = [
     label: "Finder",
     icon: (
       <img
-        src="/src/assets/dockIcon/Finder.png"
+        src={FinderIcon}
         alt="Finder"
         draggable={true}
       />
@@ -35,8 +39,8 @@ export const dockItems: DockItem[] = [
     label: "Terminal",
     icon: (
       <img
-        src="/src/assets/dockIcon/Terminal.png"
-        alt="Preview"
+        src={TerminalIcon}
+        alt="Terminal"
         draggable={true}
       />
     ),
@@ -47,7 +51,7 @@ export const dockItems: DockItem[] = [
     label: "Safari",
     icon: (
       <img
-        src="/src/assets/dockIcon/safari.png"
+        src={SafariIcon}
         alt="Safari"
         draggable={true}
       />
@@ -59,8 +63,8 @@ export const dockItems: DockItem[] = [
     label: "Contact",
     icon: (
       <img
-        src="/src/assets/dockIcon/Contact.png"
-        alt="LinkedIn"
+        src={ContactIcon}
+        alt="Contact"
         draggable={true}
       />
     ),
