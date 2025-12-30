@@ -1,0 +1,89 @@
+/* Finder Window Css */
+/* ❌ Kyun Tailwind fail ho raha hai (short & honest)
+
+Parent: backdrop-blur + semi-transparent bg
+
+Browser: blending layer me rgb()/opacity ko pre-multiply kar raha
+
+Result: color visually collapse ho jaata hai
+
+✅ Inline style (backgroundColor: "red") proper red dikhata hai
+
+❌ Tailwind classes (bg-red-500, bg-yellow-400) kaam nahi kar rahi
+
+❌ Same jagah, same DOM, same CSS context
+
+Tailwind ke background color utilities parent glass/blur ke saath conflict kar rahe hain
+Ye browser + backdrop-filter + Tailwind opacity pipeline ka issue hai.*/
+
+/* Container */
+.traffic-group {
+  display: flex;
+  gap: 8px;
+  transition: opacity 150ms ease;
+}
+
+/* Base button */
+.traffic-btn {
+  width: 15px;
+  height: 15px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  border: none;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: default;
+}
+
+/* macOS colors */
+.traffic-red { background-color: #ff5f57; }
+.traffic-yellow { background-color: #febc2e; }
+.traffic-green { background-color: #28c840; }
+
+/* Symbol */
+.traffic-symbol {
+  font-size: 13px;
+  line-height: 1;
+  color: rgba(0,0,0,0.55);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 120ms ease, transform 120ms ease;
+  pointer-events: none;
+}
+
+
+/* Show symbol on hover */
+.traffic-btn:hover .traffic-symbol {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.traffic-btn:hover {
+  filter: brightness(1.05);
+}
+.window-inactive .traffic-symbol {
+  display: none;
+}
+
+@keyframes dock-bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-12px); }
+  60%  { transform: translateY(0); }
+  80%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.dock-bounce {
+  animation: dock-bounce 700ms ease-out;
+}
+
+
+.dock-minimize {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+
